@@ -1,3 +1,6 @@
+git help [command]
+[工作区] -git add- [暂存区] -git commit- [本地库]
+
 $ cd /f/gitWorkSpace/WeChat/
 $ pws
 $ git init
@@ -41,9 +44,42 @@ $ git commit good.txt
 
 :sut nu
 
-$ git add 
-$ git commit -a
-$$
+$ git add [file name]
+$ git commit -a [file name]
+$ git commit -m "My second commit,modify gitc.txt" gitc.txt
+
+$ git log  --pretty=oneline
+$ git log  --oneline
+#显示移动步数
+$ git reflog
+b72422c (HEAD -> master) HEAD@{0}: commit: for text history
+196b1f9 HEAD@{1}: commit: My second commit,modify gitc.txt
+29fbd2e HEAD@{2}: commit: add commit gitc.txt
+725f31d HEAD@{3}: commit (initial): My firset commit.new file good.txt
+
+空格向下翻725f31d
+b向上翻页
+q退出
+
+
+git reset
+版本前进后退
+.基于索引值[推荐] $ git reset --hard b72422c
+.使用^[只能往后]  $ git reset --hard HEAD^  [^^^...] 
+.使用~[只能往后]  $ git reset --hard HEAD~3
+--soft 仅仅在本地库移动HEAD指针
+--mixed 移动HEAD指针 重置缓存区
+--hard 移动HEAD指针 重置缓存区 重置工作区
+
+$ git reset --hard HEAD
+
+删除找回
+1 删除前，提交到本地库
+删除后提交到本地库 git reset --hard [指针位置]
+删除后未提交到本地库 git reset --hard HEAD
+
+
+
 
 
 
