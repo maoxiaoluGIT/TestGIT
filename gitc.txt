@@ -128,8 +128,6 @@ push request
 #SSH
 $ ssh-keygen -t rsa -C 16624478@qq.com
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMNTI0Ft5uBkphb53H1c+An0lT4UKqMeWzVx4mTE+VT2X9Yo8+23uT0Sxy27khKtUNbMh44xNMfi4B04JayPLO/M77NT2nhe6ay7kNmP7HxP+qXIAj87wMAMnZs6MMthmeK+3mTmTU8U1bwU88iSxFO32jms9ACEn2WsTR5GhwGpBjHsQZfb7PiSpCJobOCIRxxxldm1rcUj846r29upGpzRcABtVlFFDBOeG3VcAwi/qdbvh51LXJz0r36CEvt7XGGD0ivLlSDu3n4k8q2DTRbNrNr7afE5Wqmj6KwPdUNwis4Axy7a4RtSZsVVDSFRV5S7pPWFROqtJlUqHr0IDT 16624478@qq.com
-
 $ git remote add testgit_ssh git@github.com:maoxiaoluGIT/TestGIT.git
 
 
