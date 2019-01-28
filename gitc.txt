@@ -41,6 +41,10 @@ $ git commit good.txt
 
 :sut nu
 
+$ git add 
+$ git commit -a
+$$
+
 
 
 
