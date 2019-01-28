@@ -1,0 +1,145 @@
+:set nu
+git help [command]
+[工作区] -git add- [暂存区] -git commit- [本地库]
+
+$ cd /f/gitWorkSpace/WeChat/
+$ pws
+$ git init
+$ ls -lA
+
+hkgit
+hkgit@qq.com
+
+$ git config user.name hk_pro
+$ git config user.email hk_pro@qq.com
+
+目录 ./.git/config
+
+项目级别：本地库范围
+$ git config --global user.name hk_glb
+$ git config --global user.email hk_glb@qq.com
+
+目录 ~/.gitconfig
+$ cat .gitconfig
+
+系统用户级别：登陆当前操作系统的用户范围
+项目级别优先系统级别
+都没有不行
+
+$ git status
+
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        gitc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add good.txt
+$ git rm --cached good.txt
+$ git commit good.txt
+
+
+$ git add [file name]
+$ git commit -a [file name]
+$ git commit -m "My second commit,modify gitc.txt" gitc.txt
+
+$ git log  --pretty=oneline
+$ git log  --oneline
+#显示移动步数
+$ git reflog
+b72422c (HEAD -> master) HEAD@{0}: commit: for text history
+196b1f9 HEAD@{1}: commit: My second commit,modify gitc.txt
+29fbd2e HEAD@{2}: commit: add commit gitc.txt
+725f31d HEAD@{3}: commit (initial): My firset commit.new file good.txt
+
+空格向下翻725f31d
+b向上翻页
+q退出
+
+
+git reset
+版本前进后退
+.基于索引值[推荐] $ git reset --hard b72422c
+.使用^[只能往后]  $ git reset --hard HEAD^  [^^^...] 
+.使用~[只能往后]  $ git reset --hard HEAD~3
+--soft 仅仅在本地库移动HEAD指针
+--mixed 移动HEAD指针 重置缓存区
+--hard 移动HEAD指针 重置缓存区 重置工作区
+
+$ git reset --hard HEAD
+
+删除找回
+1 删除前，提交到本地库
+删除后提交到本地库 git reset --hard [指针位置]
+删除后未提交到本地库 git reset --hard HEAD
+
+$ git diff [file name]
+
+$ git diff [本地历史版本][file name]
+不写文件名比较多个文件
+
+#分支
+$ git branch -v
+$ git branch hot_fix
+$ git checkout hot_fix
+
+合并
+1 切换到接受分支
+2 merge
+$ git checkout master [被合并分支]
+$ git merge hot_fix      [有新内容分支]
+
+Auto-merging good.txt
+CONFLICT (content): Merge conflict in good.txt
+Automatic merge failed; fix conflicts and then commit the result.
+冲突
+
+(use "git add <file>..." to mark resolution)
+git add <filename>[冲突修正]
+(use "git commit" to conclude merge)
+git commit -m "...."
+
+#远程与本地
+push
+$ git remote -v
+$ git remote add <别名><url>
+$ git remote add testgit https://github.com/maoxiaoluGIT/TestGIT.git
+$ git push <别名> <分支名>
+$ git push testgit master
+
+$ git clone https://github.com/maoxiaoluGIT/TestGIT.git
+
+
+pull
+pull = fetch + merge
+git fetch [远程库地址别名][远程分支名]
+git merge [远程库地址别名/远程分支名]
+git pull [远程库地址别名][远程分支名]
+
+github
+Fork
+push request
+
+#SSH
+$ ssh-keygen -t rsa -C 16624478@qq.com
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMNTI0Ft5uBkphb53H1c+An0lT4UKqMeWzVx4mTE+VT2X9Yo8+23uT0Sxy27khKtUNbMh44xNMfi4B04JayPLO/M77NT2nhe6ay7kNmP7HxP+qXIAj87wMAMnZs6MMthmeK+3mTmTU8U1bwU88iSxFO32jms9ACEn2WsTR5GhwGpBjHsQZfb7PiSpCJobOCIRxxxldm1rcUj846r29upGpzRcABtVlFFDBOeG3VcAwi/qdbvh51LXJz0r36CEvt7XGGD0ivLlSDu3n4k8q2DTRbNrNr7afE5Wqmj6KwPdUNwis4Axy7a4RtSZsVVDSFRV5S7pPWFROqtJlUqHr0IDT 16624478@qq.com
+
+$ git remote add testgit_ssh git@github.com:maoxiaoluGIT/TestGIT.git
+
+
+
+
+
+
+
+
+
+
+
+
